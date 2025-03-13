@@ -7,7 +7,7 @@
 		".devcontainer/initializeCommand"
 	],
 	"postCreateCommand": ".devcontainer/postCreateCommand",
-	"workspaceFolder": "/workspaces/template_data_repo",
+	"workspaceFolder": "/workspaces/ministers_gifts",
 	"customizations": {
 		"vscode": {
 			"extensions": [

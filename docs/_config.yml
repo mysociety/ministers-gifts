@@ -1,8 +1,8 @@
 theme: jekyll-theme-slate
-title: template_data_repo
-description: Standardised template for mysociety data repositories
+title: ministers-gifts
+description: Republishing ministers gifts and hospitality register
 
-baseurl: "/template_data_repo"
+baseurl: "/ministers-gifts"
 url: "https://pages.mysociety.org"
 
 collections:
