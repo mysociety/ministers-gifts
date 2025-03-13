@@ -1,0 +1,78 @@
+title: Ministers gifts and hospitality
+description: Republication of gifts and publication sheets from gov.uk
+custom:
+  row_count: 802
+path: hospitality.parquet
+name: hospitality
+profile: data-resource
+scheme: file
+format: parquet
+hashing: md5
+encoding: utf-8
+schema:
+  fields:
+  - name: Minister
+    type: string
+    description: Name of the minister
+    constraints:
+      unique: false
+    example: Abena Oppong-Asare
+  - name: Date
+    type: string
+    description: Date of the hospitality
+    constraints:
+      unique: false
+    example: 01/10/2024
+  - name: Individual or Organisation that offered hospitality
+    type: string
+    description: Name of the individual or organisation that offered the hospitality
+    constraints:
+      unique: false
+    example: ABP
+  - name: Type of Hospitality Received
+    type: string
+    description: Type of hospitality received
+    constraints:
+      unique: false
+    example: 2 Wimbledon Final Tickets
+  - name: Accompanied by Guest
+    type: string
+    description: Whether the minister was accompanied by a guest
+    constraints:
+      unique: false
+      enum:
+      - Nil Return
+      - Nil return
+      - 'No'
+      - 'Yes'
+    example: Nil Return
+  - name: Value of Hospitality (£)
+    type: string
+    description: Value of the hospitality
+    constraints:
+      unique: false
+    example: $100
+  - name: Department
+    type: string
+    description: Department of the minister
+    constraints:
+      unique: false
+    example: Attorney General S Office - Ministers
+  - name: source_slug
+    type: string
+    description: Slug of the source
+    constraints:
+      unique: false
+    example: Attorney_General_s_Office_-_Ministers__Hospitality_-_Dec_2024__1_
+  - name: release_slug
+    type: string
+    description: Slug of the release
+    constraints:
+      unique: false
+      enum:
+      - register-of-ministers-gifts-and-hospitality-december-2024
+      - register-of-ministers-gifts-and-hospitality-january-2025
+      - register-of-ministers-gifts-and-hospitality-july-to-october-2024
+      - register-of-ministers-gifts-and-hospitality-november-2024
+    example: register-of-ministers-gifts-and-hospitality-december-2024
+hash: a16e8fbb82fa7b3f8bfdad384c138143

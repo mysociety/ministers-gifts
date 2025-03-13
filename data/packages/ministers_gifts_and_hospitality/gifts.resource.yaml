@@ -1,0 +1,86 @@
+title: Government Gifts register
+description: Joined-up version of csvs from gov.uk
+custom:
+  row_count: 595
+path: gifts.parquet
+name: gifts
+profile: data-resource
+scheme: file
+format: parquet
+hashing: md5
+encoding: cp1254
+schema:
+  fields:
+  - name: Minister
+    type: string
+    description: Name of the minister
+    constraints:
+      unique: false
+    example: Abena Oppong-Asare
+  - name: Date
+    type: string
+    description: Date of the gift
+    constraints:
+      unique: false
+    example: 01/08/2024
+  - name: Gift
+    type: string
+    description: Description of the gift
+    constraints:
+      unique: false
+    example: 100% silk limited edition Maximilian Mucska tie
+  - name: Given or Received
+    type: string
+    description: Whether the gift was given or received
+    constraints:  
+      unique: false
+      enum:
+      - NIL Return
+      - Nil Return
+      - 'Nil Return '
+      - Nil return
+      - Received
+      - Received (by Mrs Starmer)
+    example: NIL Return
+  - name: Who gift was given to or received from
+    type: string
+    description: Name of the person the gift was given to or received from
+    constraints:
+      unique: false
+    example: Airbus
+  - name: Value (£)
+    type: string
+    description: Value of the gift
+    constraints:
+      unique: false
+    example: 1,800
+  - name: Outcome (Received gifts only)
+    type: string
+    description: Outcome of the gift
+    constraints:
+      unique: false
+    example: Donated to charity
+  - name: Department
+    type: string
+    description: Department of the minister (created from document source)
+    constraints:
+      unique: false
+    example: Attorney General S Office - Ministers
+  - name: source_slug
+    type: string
+    description: Slug of the source
+    constraints:
+      unique: false
+    example: Attorney_General_s_Office_-_Ministers__Gifts_-_December_2024
+  - name: release_slug
+    type: string
+    description: Slug of the release
+    constraints:
+      unique: false
+      enum:
+      - register-of-ministers-gifts-and-hospitality-december-2024
+      - register-of-ministers-gifts-and-hospitality-january-2025
+      - register-of-ministers-gifts-and-hospitality-july-to-october-2024
+      - register-of-ministers-gifts-and-hospitality-november-2024
+    example: register-of-ministers-gifts-and-hospitality-december-2024
+hash: 596233d4b0ad53eeeee09260dcfa4582

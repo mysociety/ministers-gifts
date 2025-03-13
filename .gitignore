@@ -6,3 +6,5 @@ _render/_parts
 _render/_papermills
 docs/_site
 UNKNOWN.egg-info
+docs/data
+docs/_*
