@@ -13,7 +13,9 @@ contributors:
   - title: mySociety
     path: https://mysociety.org
     role: author
-
+  - title: Various UK Government departments
+    path: https://www.gov.uk/government/collections/register-of-ministers-gifts-and-hospitality
+    role: author
 
 custom:
   build: "ministers_gifts.download:download_and_store"

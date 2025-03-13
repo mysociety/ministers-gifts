@@ -62,6 +62,14 @@ def get_csv(csv_url: URL):
     df = df.loc[:, ~df.columns.str.contains("^Unnamed")]
     df["Department"] = get_dept(get_final_part_of_url(csv_url))
     df["source_slug"] = get_final_part_of_url(csv_url)
+
+    # convert Date column from either iso or UK datetime to iso datetime
+    df["Date"] = pd.to_datetime(df["Date"], errors="coerce", dayfirst=True).dt.date
+
+    # "Nil return" values should be "Nil Return" for consistency
+
+    df = df.replace("Nil return", "Nil Return")
+
     return df
 
 

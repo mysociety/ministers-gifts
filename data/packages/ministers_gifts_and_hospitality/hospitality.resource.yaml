@@ -1,5 +1,5 @@
-title: Ministers gifts and hospitality
-description: Republication of gifts and publication sheets from gov.uk
+title: Ministers hospitality
+description: Republication of disclosures of hospitality csvs from gov.uk
 custom:
   row_count: 802
 path: hospitality.parquet
