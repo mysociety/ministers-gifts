@@ -22,7 +22,7 @@ schema:
     description: Date of the hospitality
     constraints:
       unique: false
-    example: 01/10/2024
+    example: '2023-09-26'
   - name: Individual or Organisation that offered hospitality
     type: string
     description: Name of the individual or organisation that offered the hospitality
@@ -42,7 +42,6 @@ schema:
       unique: false
       enum:
       - Nil Return
-      - Nil return
       - 'No'
       - 'Yes'
     example: Nil Return
@@ -75,4 +74,13 @@ schema:
       - register-of-ministers-gifts-and-hospitality-july-to-october-2024
       - register-of-ministers-gifts-and-hospitality-november-2024
     example: register-of-ministers-gifts-and-hospitality-december-2024
-hash: a16e8fbb82fa7b3f8bfdad384c138143
+  - name: nil_return
+    type: boolean
+    description: If there wasn't a gift - nothing declared
+    constraints:
+      unique: false
+      enum:
+      - false
+      - true
+    example: 'False'
+hash: 02eda42230ffd17d3841e8bae822552e

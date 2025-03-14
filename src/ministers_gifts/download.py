@@ -103,6 +103,11 @@ def download_and_store():
         "Value of Hospitality (£)"
     ].astype(str)
 
+    gift_df["nil_return"] = gift_df["Value (£)"].str.lower() == "nil return"
+    hospitality_df["nil_return"] = (
+        hospitality_df["Value of Hospitality (£)"].str.lower() == "nil return"
+    )
+
     package_path = Path("data", "packages", "ministers_gifts_and_hospitality")
 
     gift_df.to_parquet(package_path / "gifts.parquet")

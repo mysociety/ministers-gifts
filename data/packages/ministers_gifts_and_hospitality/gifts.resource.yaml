@@ -22,7 +22,7 @@ schema:
     description: Date of the gift
     constraints:
       unique: false
-    example: 01/08/2024
+    example: '2024-07-11'
   - name: Gift
     type: string
     description: Description of the gift
@@ -32,13 +32,12 @@ schema:
   - name: Given or Received
     type: string
     description: Whether the gift was given or received
-    constraints:  
+    constraints:
       unique: false
       enum:
       - NIL Return
       - Nil Return
       - 'Nil Return '
-      - Nil return
       - Received
       - Received (by Mrs Starmer)
     example: NIL Return
@@ -83,4 +82,13 @@ schema:
       - register-of-ministers-gifts-and-hospitality-july-to-october-2024
       - register-of-ministers-gifts-and-hospitality-november-2024
     example: register-of-ministers-gifts-and-hospitality-december-2024
-hash: 596233d4b0ad53eeeee09260dcfa4582
+  - name: nil_return
+    type: boolean
+    description: If there wasn't a gift - nothing declared
+    constraints:
+      unique: false
+      enum:
+      - false
+      - true
+    example: 'False'
+hash: cbb8025fb01e0d0f4bfe93e50fb3930c
