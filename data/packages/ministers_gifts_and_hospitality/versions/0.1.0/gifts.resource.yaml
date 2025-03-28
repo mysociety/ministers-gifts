@@ -1,7 +1,7 @@
 title: Government Gifts register
 description: Joined-up version of csvs from gov.uk
 custom:
-  row_count: 595
+  row_count: 22602
 path: gifts.parquet
 name: gifts
 profile: data-resource
@@ -34,13 +34,7 @@ schema:
     description: Whether the gift was given or received
     constraints:
       unique: false
-      enum:
-      - NIL Return
-      - Nil Return
-      - 'Nil Return '
-      - Received
-      - Received (by Mrs Starmer)
-    example: NIL Return
+    example: Given
   - name: Who gift was given to or received from
     type: string
     description: Name of the person the gift was given to or received from
@@ -78,6 +72,7 @@ schema:
       unique: false
       enum:
       - register-of-ministers-gifts-and-hospitality-december-2024
+      - register-of-ministers-gifts-and-hospitality-february-2025
       - register-of-ministers-gifts-and-hospitality-january-2025
       - register-of-ministers-gifts-and-hospitality-july-to-october-2024
       - register-of-ministers-gifts-and-hospitality-november-2024
@@ -91,4 +86,4 @@ schema:
       - false
       - true
     example: 'False'
-hash: cbb8025fb01e0d0f4bfe93e50fb3930c
+hash: 933a44835adbf147a10d9a7fa2041332
