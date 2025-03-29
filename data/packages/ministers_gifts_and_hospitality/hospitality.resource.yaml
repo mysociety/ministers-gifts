@@ -1,7 +1,7 @@
 title: Ministers hospitality
 description: Republication of disclosures of hospitality csvs from gov.uk
 custom:
-  row_count: 23786
+  row_count: 966
 path: hospitality.parquet
 name: hospitality
 profile: data-resource
@@ -40,6 +40,10 @@ schema:
     description: Whether the minister was accompanied by a guest
     constraints:
       unique: false
+      enum:
+      - Nil Return
+      - 'No'
+      - 'Yes'
     example: Nil Return
   - name: Value of Hospitality (£)
     type: string
@@ -80,4 +84,4 @@ schema:
       - false
       - true
     example: 'False'
-hash: 65c91d87f68998bb335e7908d144fbed
+hash: 9cebd2d2634687c2399bfb7e75b37735
