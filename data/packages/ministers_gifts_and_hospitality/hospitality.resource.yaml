@@ -1,7 +1,7 @@
 title: Ministers hospitality
 description: Republication of disclosures of hospitality csvs from gov.uk
 custom:
-  row_count: 966
+  row_count: 1141
 path: hospitality.parquet
 name: hospitality
 profile: data-resource
@@ -16,7 +16,10 @@ schema:
     description: Name of the minister
     constraints:
       unique: false
-    example: Abena Oppong-Asare
+    example: "* Seats in Chairman's box offered to the Foreign Secretary and Indian\
+      \ Foreign Minister and spouse during an India Inward visit. Tickets are not\
+      \ available for purchase but similar seats are estimated at £250. The Foreign\
+      \ Secretary made a £250 contribution to the Tottenham Hotspur Foundation"
   - name: Date
     type: string
     description: Date of the hospitality
@@ -40,10 +43,6 @@ schema:
     description: Whether the minister was accompanied by a guest
     constraints:
       unique: false
-      enum:
-      - Nil Return
-      - 'No'
-      - 'Yes'
     example: Nil Return
   - name: Value of Hospitality (£)
     type: string
@@ -73,6 +72,7 @@ schema:
       - register-of-ministers-gifts-and-hospitality-february-2025
       - register-of-ministers-gifts-and-hospitality-january-2025
       - register-of-ministers-gifts-and-hospitality-july-to-october-2024
+      - register-of-ministers-gifts-and-hospitality-march-2025
       - register-of-ministers-gifts-and-hospitality-november-2024
     example: register-of-ministers-gifts-and-hospitality-december-2024
   - name: nil_return
@@ -84,4 +84,4 @@ schema:
       - false
       - true
     example: 'False'
-hash: 9cebd2d2634687c2399bfb7e75b37735
+hash: 8f6b8c129632fe5466b2c19b5e9ef7f3
