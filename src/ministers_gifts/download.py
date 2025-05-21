@@ -56,7 +56,19 @@ def get_dept(s: str):
 
 
 def get_csv(csv_url: URL):
-    df = pd.read_csv(csv_url)
+    try:
+        df = pd.read_csv(csv_url, encoding="utf-8")
+    except UnicodeDecodeError:
+        try:
+            df = pd.read_csv(csv_url, encoding="latin1")
+        except Exception:
+            # As a last resort
+            df = pd.read_csv(csv_url, encoding="cp1252")
+
+    if "Value (Â£)" in df.columns:
+        # rename to Value (£)
+        df = df.rename(columns={"Value (Â£)": "Value (£)"})
+
     df.columns = [x.strip() for x in df.columns]
     # drop unnamed columns
     df = df.loc[:, ~df.columns.str.contains("^Unnamed")]
