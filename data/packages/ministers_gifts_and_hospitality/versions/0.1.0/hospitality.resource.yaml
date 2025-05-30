@@ -1,7 +1,7 @@
 title: Ministers hospitality
 description: Republication of disclosures of hospitality csvs from gov.uk
 custom:
-  row_count: 1141
+  row_count: 1298
 path: hospitality.parquet
 name: hospitality
 profile: data-resource
@@ -31,7 +31,7 @@ schema:
     description: Name of the individual or organisation that offered the hospitality
     constraints:
       unique: false
-    example: ABP
+    example: '2025-04-01'
   - name: Type of Hospitality Received
     type: string
     description: Type of hospitality received
@@ -43,13 +43,13 @@ schema:
     description: Whether the minister was accompanied by a guest
     constraints:
       unique: false
-    example: Nil Return
+    example: Car from station to university and return
   - name: Value of Hospitality (£)
     type: string
     description: Value of the hospitality
     constraints:
       unique: false
-    example: $100
+    example: ' Yes'
   - name: Department
     type: string
     description: Department of the minister
@@ -61,20 +61,21 @@ schema:
     description: Slug of the source
     constraints:
       unique: false
-    example: Attorney_General_s_Office_-_Ministers__Hospitality_-_Dec_2024__1_
+    example: Attorney_General_s_Office_-_Ministers__Hospitality_-_April_2025
   - name: release_slug
     type: string
     description: Slug of the release
     constraints:
       unique: false
       enum:
+      - register-of-ministers-gifts-and-hospitality-april-2025
       - register-of-ministers-gifts-and-hospitality-december-2024
       - register-of-ministers-gifts-and-hospitality-february-2025
       - register-of-ministers-gifts-and-hospitality-january-2025
       - register-of-ministers-gifts-and-hospitality-july-to-october-2024
       - register-of-ministers-gifts-and-hospitality-march-2025
       - register-of-ministers-gifts-and-hospitality-november-2024
-    example: register-of-ministers-gifts-and-hospitality-december-2024
+    example: register-of-ministers-gifts-and-hospitality-april-2025
   - name: nil_return
     type: boolean
     description: If there wasn't a gift - nothing declared
@@ -84,4 +85,4 @@ schema:
       - false
       - true
     example: 'False'
-hash: 8f6b8c129632fe5466b2c19b5e9ef7f3
+hash: edbc9ce4d82853c69b3c2b920d1f2972
