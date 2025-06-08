@@ -40,6 +40,9 @@ def get_csv_links_from_page(page_url: URL) -> list[URL]:
 
     lower_links = [link.lower() for link in csv_links]
 
+    # discard links that contains 'csv-preview'
+    csv_links = [link for link in csv_links if "csv-preview" not in link.lower()]
+
     # check that all links contain either 'gifts' or 'hospitality'
 
     for link in lower_links:
