@@ -1,7 +1,7 @@
 title: Ministers hospitality
 description: Republication of disclosures of hospitality csvs from gov.uk
 custom:
-  row_count: 1298
+  row_count: 1463
 path: hospitality.parquet
 name: hospitality
 profile: data-resource
@@ -37,7 +37,7 @@ schema:
     description: Type of hospitality received
     constraints:
       unique: false
-    example: 2 Wimbledon Final Tickets
+    example: 1 Drink
   - name: Accompanied by Guest
     type: string
     description: Whether the minister was accompanied by a guest
@@ -74,6 +74,7 @@ schema:
       - register-of-ministers-gifts-and-hospitality-january-2025
       - register-of-ministers-gifts-and-hospitality-july-to-october-2024
       - register-of-ministers-gifts-and-hospitality-march-2025
+      - register-of-ministers-gifts-and-hospitality-may-2025
       - register-of-ministers-gifts-and-hospitality-november-2024
     example: register-of-ministers-gifts-and-hospitality-april-2025
   - name: nil_return
@@ -85,4 +86,4 @@ schema:
       - false
       - true
     example: 'False'
-hash: edbc9ce4d82853c69b3c2b920d1f2972
+hash: 35605a41ffc16e19382f7adb54d8e554
