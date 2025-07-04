@@ -43,13 +43,13 @@ schema:
     description: Whether the minister was accompanied by a guest
     constraints:
       unique: false
-    example: Car from station to university and return
+    example: ' Yes'
   - name: Value of Hospitality (£)
     type: string
     description: Value of the hospitality
     constraints:
       unique: false
-    example: ' Yes'
+    example: $100
   - name: Department
     type: string
     description: Department of the minister
@@ -86,4 +86,4 @@ schema:
       - false
       - true
     example: 'False'
-hash: 35605a41ffc16e19382f7adb54d8e554
+hash: fd2a6ca8e8e05b56255136497a30489d
