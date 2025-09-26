@@ -1,7 +1,7 @@
 title: Ministers hospitality
 description: Republication of disclosures of hospitality csvs from gov.uk
 custom:
-  row_count: 1810
+  row_count: 1948
 path: hospitality.parquet
 name: hospitality
 profile: data-resource
@@ -69,6 +69,7 @@ schema:
       unique: false
       enum:
       - register-of-ministers-gifts-and-hospitality-april-2025
+      - register-of-ministers-gifts-and-hospitality-august-2025
       - register-of-ministers-gifts-and-hospitality-december-2024
       - register-of-ministers-gifts-and-hospitality-february-2025
       - register-of-ministers-gifts-and-hospitality-january-2025
@@ -88,4 +89,4 @@ schema:
       - false
       - true
     example: 'False'
-hash: 88bfcfdd26b2bcf792b1b83ea4d2d43d
+hash: b0a482b6c35d6885926b94cad2427a87
