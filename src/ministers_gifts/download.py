@@ -72,6 +72,12 @@ def get_csv(csv_url: URL):
         # rename to Value (£)
         df = df.rename(columns={"Value (Â£)": "Value (£)"})
 
+    if "Estimated value of Hospitality (£)" in df.columns:
+        # rename to Value of Hospitality (£)
+        df = df.rename(
+            columns={"Estimated value of Hospitality (£)": "Value of Hospitality (£)"}
+        )
+
     df.columns = [x.strip() for x in df.columns]
     # drop unnamed columns
     df = df.loc[:, ~df.columns.str.contains("^Unnamed")]
