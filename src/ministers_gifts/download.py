@@ -72,6 +72,12 @@ def get_csv(csv_url: URL):
         # rename to Value (£)
         df = df.rename(columns={"Value (Â£)": "Value (£)"})
 
+    if "Value of Hospitality (Â£)" in df.columns:
+        # rename to Value of Hospitality (£)
+        df = df.rename(
+            columns={"Value of Hospitality (Â£)": "Value of Hospitality (£)"}
+        )
+
     if "Estimated value of Hospitality (£)" in df.columns:
         # rename to Value of Hospitality (£)
         df = df.rename(
