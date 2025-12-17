@@ -1,7 +1,7 @@
 title: Government Gifts register
 description: Joined-up version of csvs from gov.uk
 custom:
-  row_count: 1933
+  row_count: 2073
 path: gifts.parquet
 name: gifts
 profile: data-resource
@@ -89,6 +89,7 @@ schema:
       - register-of-ministers-gifts-and-hospitality-march-2025
       - register-of-ministers-gifts-and-hospitality-may-2025
       - register-of-ministers-gifts-and-hospitality-november-2024
+      - register-of-ministers-gifts-and-hospitality-november-2025
       - register-of-ministers-gifts-and-hospitality-october-2025
       - register-of-ministers-gifts-and-hospitality-september-2025
     example: register-of-ministers-gifts-and-hospitality-april-2025
@@ -101,4 +102,4 @@ schema:
       - false
       - true
     example: 'False'
-hash: 284ee310ccd17d10cd4ffa66434d8b90
+hash: 8aec52df43958461d35b1b81406db5b9
