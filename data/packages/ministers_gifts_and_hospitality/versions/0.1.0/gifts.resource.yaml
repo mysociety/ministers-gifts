@@ -1,7 +1,7 @@
 title: Government Gifts register
 description: Joined-up version of csvs from gov.uk
 custom:
-  row_count: 2073
+  row_count: 2219
 path: gifts.parquet
 name: gifts
 profile: data-resource
@@ -77,21 +77,6 @@ schema:
     description: Slug of the release
     constraints:
       unique: false
-      enum:
-      - register-of-ministers-gifts-and-hospitality-april-2025
-      - register-of-ministers-gifts-and-hospitality-august-2025
-      - register-of-ministers-gifts-and-hospitality-december-2024
-      - register-of-ministers-gifts-and-hospitality-february-2025
-      - register-of-ministers-gifts-and-hospitality-january-2025
-      - register-of-ministers-gifts-and-hospitality-july-2025
-      - register-of-ministers-gifts-and-hospitality-july-to-october-2024
-      - register-of-ministers-gifts-and-hospitality-june-2025
-      - register-of-ministers-gifts-and-hospitality-march-2025
-      - register-of-ministers-gifts-and-hospitality-may-2025
-      - register-of-ministers-gifts-and-hospitality-november-2024
-      - register-of-ministers-gifts-and-hospitality-november-2025
-      - register-of-ministers-gifts-and-hospitality-october-2025
-      - register-of-ministers-gifts-and-hospitality-september-2025
     example: register-of-ministers-gifts-and-hospitality-april-2025
   - name: nil_return
     type: boolean
@@ -102,4 +87,4 @@ schema:
       - false
       - true
     example: 'False'
-hash: 8aec52df43958461d35b1b81406db5b9
+hash: 19ac7ddfcba59e2eb6adaf5a19fc8f33
