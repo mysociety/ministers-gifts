@@ -1,7 +1,7 @@
 title: Government Gifts register
 description: Joined-up version of csvs from gov.uk
 custom:
-  row_count: 2219
+  row_count: 3216
 path: gifts.parquet
 name: gifts
 profile: data-resource
@@ -34,13 +34,6 @@ schema:
     description: Whether the gift was given or received
     constraints:
       unique: false
-      enum:
-      - Given
-      - NIL Return
-      - Nil Return
-      - 'Nil Return '
-      - Received
-      - Received (by Mrs Starmer)
     example: Given
   - name: Who gift was given to or received from
     type: string
@@ -87,4 +80,4 @@ schema:
       - false
       - true
     example: 'False'
-hash: 19ac7ddfcba59e2eb6adaf5a19fc8f33
+hash: df5c9a0a73c76f93e5eef44e7d309333
