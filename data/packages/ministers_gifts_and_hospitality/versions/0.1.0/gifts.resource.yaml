@@ -1,7 +1,7 @@
 title: Government Gifts register
 description: Joined-up version of csvs from gov.uk
 custom:
-  row_count: 3216
+  row_count: 3367
 path: gifts.parquet
 name: gifts
 profile: data-resource
@@ -16,7 +16,10 @@ schema:
     description: Name of the minister
     constraints:
       unique: false
-    example: Abena Oppong-Asare
+    example: '* Brompton Bicycles Ltd, Jellycat, Manchester United Football Club,
+      Arsenal Football Club donated products to be gifted by the Prime Minister during
+      his visit to China. No10 partially contributed to the cost of the Brompton Bicycle
+      as part of this arrangement'
   - name: Date
     type: string
     description: Date of the gift
@@ -40,7 +43,7 @@ schema:
     description: Name of the person the gift was given to or received from
     constraints:
       unique: false
-    example: Airbus
+    example: Abdullah bin Zayed, UAE Foreign Minister
   - name: Value (£)
     type: string
     description: Value of the gift
@@ -80,4 +83,4 @@ schema:
       - false
       - true
     example: 'False'
-hash: df5c9a0a73c76f93e5eef44e7d309333
+hash: 1e3fec70e545f449ce5af12dbe734491
