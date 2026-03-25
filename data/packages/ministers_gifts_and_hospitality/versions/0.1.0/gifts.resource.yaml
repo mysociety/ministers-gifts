@@ -1,7 +1,7 @@
 title: Government Gifts register
 description: Joined-up version of csvs from gov.uk
 custom:
-  row_count: 3367
+  row_count: 2513
 path: gifts.parquet
 name: gifts
 profile: data-resource
@@ -49,7 +49,7 @@ schema:
     description: Value of the gift
     constraints:
       unique: false
-    example: 1,800
+    example: '0'
   - name: Outcome (Received gifts only)
     type: string
     description: Outcome of the gift
@@ -83,4 +83,4 @@ schema:
       - false
       - true
     example: 'False'
-hash: 1e3fec70e545f449ce5af12dbe734491
+hash: b24b267fbd9efb58c5593b4e39bf58df
