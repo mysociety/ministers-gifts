@@ -126,6 +126,8 @@ def download_and_store():
     gift_df = get_all_csvs("gifts")
     hospitality_df = get_all_csvs("hospitality")
 
+    gift_df = gift_df[gift_df["Minister"].notna()]
+
     hospitality_df["Value of Hospitality (£)"] = hospitality_df[
         "Value of Hospitality (£)"
     ].astype(str)
@@ -136,6 +138,8 @@ def download_and_store():
     )
 
     package_path = Path("data", "packages", "ministers_gifts_and_hospitality")
+    # set na to 0 for gifts and hospitality
+    gift_df["Value (£)"] = gift_df["Value (£)"].fillna(0).astype(str)
 
     gift_df.to_parquet(package_path / "gifts.parquet")
     hospitality_df.to_parquet(package_path / "hospitality.parquet")
