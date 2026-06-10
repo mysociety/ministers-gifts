@@ -1,7 +1,7 @@
 title: Ministers hospitality
 description: Republication of disclosures of hospitality csvs from gov.uk
 custom:
-  row_count: 3316
+  row_count: 3317
 path: hospitality.parquet
 name: hospitality
 profile: data-resource
@@ -77,4 +77,4 @@ schema:
       - false
       - true
     example: 'False'
-hash: 09434795cdc36c0fbb9f34a9167b3d86
+hash: c6eacaea35292cddf583c5f3fd59869d
