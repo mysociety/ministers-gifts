@@ -1,7 +1,7 @@
 title: Government Gifts register
 description: Joined-up version of csvs from gov.uk
 custom:
-  row_count: 2801
+  row_count: 2949
 path: gifts.parquet
 name: gifts
 profile: data-resource
@@ -83,4 +83,4 @@ schema:
       - false
       - true
     example: 'False'
-hash: 27acf99853185a7468bb831602b35884
+hash: ec1d0a626b01280eee80e50e73952f1b
