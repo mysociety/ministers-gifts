@@ -1,7 +1,7 @@
 title: Government Gifts register
 description: Joined-up version of csvs from gov.uk
 custom:
-  row_count: 2949
+  row_count: 3107
 path: gifts.parquet
 name: gifts
 profile: data-resource
@@ -61,13 +61,13 @@ schema:
     description: Department of the minister (created from document source)
     constraints:
       unique: false
-    example: Attorney General S Office - Ministers
+    example: 2026-07-29 - Gifts Split By Attorney General S Office
   - name: source_slug
     type: string
     description: Slug of the source
     constraints:
       unique: false
-    example: Attorney_General_s_Office_-_Ministers__Gifts_-_April_2025
+    example: 2026-07-29_-_Gifts_Split_by_Attorney_General_s_Office
   - name: release_slug
     type: string
     description: Slug of the release
@@ -83,4 +83,4 @@ schema:
       - false
       - true
     example: 'False'
-hash: ec1d0a626b01280eee80e50e73952f1b
+hash: 51f3c85f4e9977090c2fe97c89436c6f
