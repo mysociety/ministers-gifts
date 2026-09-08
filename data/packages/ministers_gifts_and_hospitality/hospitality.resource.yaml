@@ -16,10 +16,10 @@ schema:
     description: Name of the minister
     constraints:
       unique: false
-    example: "* Seats in Chairman's box offered to the Foreign Secretary and Indian\
-      \ Foreign Minister and spouse during an India Inward visit. Tickets are not\
-      \ available for purchase but similar seats are estimated at £250. The Foreign\
-      \ Secretary made a £250 contribution to the Tottenham Hotspur Foundation"
+    example: "* Seats in Chairman's box offered to the Foreign Secretary and Indian
+      Foreign Minister and spouse during an India Inward visit. Tickets are not available
+      for purchase but similar seats are estimated at £250. The Foreign Secretary
+      made a £250 contribution to the Tottenham Hotspur Foundation"
   - name: Date
     type: date
     description: Date of the hospitality
@@ -28,7 +28,8 @@ schema:
     example: '2023-09-26'
   - name: Individual or Organisation that offered hospitality
     type: string
-    description: Name of the individual or organisation that offered the hospitality
+    description: Name of the individual or organisation that offered the 
+      hospitality
     constraints:
       unique: false
     example: '2025-04-01'
