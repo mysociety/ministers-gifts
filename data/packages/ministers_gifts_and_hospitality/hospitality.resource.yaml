@@ -21,7 +21,7 @@ schema:
       \ available for purchase but similar seats are estimated at £250. The Foreign\
       \ Secretary made a £250 contribution to the Tottenham Hotspur Foundation"
   - name: Date
-    type: string
+    type: date
     description: Date of the hospitality
     constraints:
       unique: false

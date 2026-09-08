@@ -4,6 +4,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    working_dir: /workspaces/ministers_gifts      
+    working_dir: /workspaces/ministers_gifts
     volumes:
       - ./:/workspaces/ministers_gifts/
+      - /workspaces/ministers_gifts/.venv

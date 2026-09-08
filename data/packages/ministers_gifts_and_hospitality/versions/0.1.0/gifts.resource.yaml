@@ -21,7 +21,7 @@ schema:
       his visit to China. No10 partially contributed to the cost of the Brompton Bicycle
       as part of this arrangement'
   - name: Date
-    type: string
+    type: date
     description: Date of the gift
     constraints:
       unique: false

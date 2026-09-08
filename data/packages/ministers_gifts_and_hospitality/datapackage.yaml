@@ -16,7 +16,7 @@ contributors:
 custom:
   build: ministers_gifts.download:download_and_store
   tests:
-  - test_ministers_gifts_and_hospitality
+  - test_ministers_gifts
   dataset_order: 0
   download_options:
     gate: default

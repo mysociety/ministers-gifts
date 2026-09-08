@@ -1,4 +1,7 @@
+from __future__ import annotations
+
 from pathlib import Path
+from tempfile import NamedTemporaryFile
 from typing import Literal, NewType
 
 import httpx
@@ -15,12 +18,12 @@ def get_release_urls() -> list[URL]:
 
     # get all a links with a class of govuk-link
 
-    links = index_soup.find_all("a", class_="govuk-link")
-    link_urls = [link["href"] for link in links]
+    links = index_soup.find_all("a", class_="govuk-link", href=True)
+    link_urls = [str(link["href"]) for link in links]
     # reduce to links that start '/government/publications/register-of-ministers-gifts-and-hospitality'
 
     link_urls = [
-        "https://www.gov.uk" + link
+        URL("https://www.gov.uk" + link)
         for link in link_urls
         if link.startswith(
             "/government/publications/register-of-ministers-gifts-and-hospitality"
@@ -35,8 +38,10 @@ def get_csv_links_from_page(page_url: URL) -> list[URL]:
     page_soup = BeautifulSoup(page.text, "html.parser")
 
     # get all links that are .csvs
-    csv_links = page_soup.find_all("a")
-    csv_links = [link["href"] for link in csv_links if link["href"].endswith(".csv")]
+    links = page_soup.find_all("a", href=True)
+    csv_links = [
+        URL(str(link["href"])) for link in links if str(link["href"]).endswith(".csv")
+    ]
 
     lower_links = [link.lower() for link in csv_links]
 
@@ -52,13 +57,13 @@ def get_csv_links_from_page(page_url: URL) -> list[URL]:
     return csv_links
 
 
-def get_dept(s: str):
+def get_dept(s: str) -> str:
     # get first part seperated by __
     s = s.split("__")[0]
     return s.replace("_", " ").title()
 
 
-def get_csv(csv_url: URL):
+def get_csv(csv_url: URL) -> pd.DataFrame:
     try:
         df = pd.read_csv(csv_url, encoding="utf-8")
     except UnicodeDecodeError:
@@ -97,7 +102,9 @@ def get_csv(csv_url: URL):
     df["source_slug"] = get_final_part_of_url(csv_url)
 
     # convert Date column from either iso or UK datetime to iso datetime
-    df["Date"] = pd.to_datetime(df["Date"], errors="coerce", dayfirst=True).dt.date
+    df["Date"] = pd.to_datetime(
+        df["Date"], format="mixed", errors="coerce", dayfirst=True
+    ).dt.date
 
     # "Nil return" values should be "Nil Return" for consistency
 
@@ -106,14 +113,14 @@ def get_csv(csv_url: URL):
     return df
 
 
-def get_final_part_of_url(s: str):
+def get_final_part_of_url(s: str) -> str:
     s = s.split("/")[-1]
     if s.endswith(".csv"):
         s = s[:-4]
     return s
 
 
-def get_all_csvs(csv_type: Literal["gifts", "hospitality"]):
+def get_all_csvs(csv_type: Literal["gifts", "hospitality"]) -> pd.DataFrame:
     dfs: list[pd.DataFrame] = []
     releases = get_release_urls()
     for r in releases:
@@ -128,7 +135,7 @@ def get_all_csvs(csv_type: Literal["gifts", "hospitality"]):
     return pd.concat(dfs)
 
 
-def download_and_store():
+def download_and_store() -> None:
     gift_df = get_all_csvs("gifts")
     hospitality_df = get_all_csvs("hospitality")
 
@@ -147,5 +154,17 @@ def download_and_store():
     # set na to 0 for gifts and hospitality
     gift_df["Value (£)"] = gift_df["Value (£)"].fillna(0).astype(str)
 
-    gift_df.to_parquet(package_path / "gifts.parquet")
-    hospitality_df.to_parquet(package_path / "hospitality.parquet")
+    store_parquet(gift_df, package_path / "gifts.parquet")
+    store_parquet(hospitality_df, package_path / "hospitality.parquet")
+
+
+def store_parquet(dataframe: pd.DataFrame, path: Path) -> None:
+    """
+    Preserve existing resource bytes when only Parquet serialization has changed.
+    """
+    with NamedTemporaryFile(dir=path.parent, suffix=".parquet") as temporary:
+        candidate = Path(temporary.name)
+        dataframe.to_parquet(candidate)
+        if path.exists() and pd.read_parquet(path).equals(pd.read_parquet(candidate)):
+            return
+        path.write_bytes(candidate.read_bytes())

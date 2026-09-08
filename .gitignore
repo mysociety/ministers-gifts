@@ -4,7 +4,6 @@ secrets.yaml
 data/private/*
 _render/_parts
 _render/_papermills
-docs/_site
 UNKNOWN.egg-info
-docs/data
-docs/_*
+_site/
+data/packages/_published/
